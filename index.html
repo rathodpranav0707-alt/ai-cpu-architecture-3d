@@ -75,7 +75,10 @@
   <div id="stats-panel">
     <div class="panel-title">
       <span>System Telemetry</span>
-      <span style="font-size: 0.7rem; color: var(--accent-green);">● LIVE</span>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 0.7rem; color: var(--accent-green);">● LIVE</span>
+        <button id="stats-panel-close" class="mobile-panel-close" title="Close Panel">✕</button>
+      </div>
     </div>
 
     <div class="stat-row">
@@ -120,6 +123,10 @@
 
   <!-- Workload Simulator & View Controls (Right Panel) -->
   <div id="control-panel">
+    <div class="panel-title mobile-panel-header">
+      <span>Controls & Workload</span>
+      <button id="control-panel-close" class="mobile-panel-close" title="Close Panel">✕</button>
+    </div>
     <div class="section-label">Workload Simulator</div>
     <div class="grid-buttons">
       <button class="btn-sim" data-mode="LOW">Low Workload</button>
@@ -210,6 +217,22 @@
       <button id="btn-pres-exit" class="btn-pres" style="background: rgba(220,38,38,0.2); border-color: var(--accent-red);">Exit Tour</button>
       <button id="btn-pres-next" class="btn-pres">Next</button>
     </div>
+  </div>
+
+  <!-- Mobile Navigation Dock (Phones & Tablets) -->
+  <div id="mobile-dock" class="mobile-dock">
+    <button id="btn-mobile-stats" class="mobile-dock-btn">
+      <span class="dock-icon">📊</span>
+      <span>Telemetry</span>
+    </button>
+    <button id="btn-mobile-controls" class="mobile-dock-btn">
+      <span class="dock-icon">⚙️</span>
+      <span>Controls</span>
+    </button>
+    <button id="btn-mobile-team" class="mobile-dock-btn">
+      <span class="dock-icon">👥</span>
+      <span>Team</span>
+    </button>
   </div>
 
   <!-- Floating Team Pill Badge (Bottom-Left) -->

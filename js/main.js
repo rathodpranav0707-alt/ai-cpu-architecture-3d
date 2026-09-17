@@ -2439,6 +2439,42 @@ class App {
       }
     });
 
+    // ──── Mobile Dock & Panel Close Bindings ────
+    const statsPanel = document.getElementById('stats-panel');
+    const controlPanel = document.getElementById('control-panel');
+
+    const closeMobilePanels = () => {
+      statsPanel?.classList.remove('mobile-visible');
+      controlPanel?.classList.remove('mobile-visible');
+    };
+
+    document.getElementById('btn-mobile-stats')?.addEventListener('click', () => {
+      this.audioEngine.playClick();
+      controlPanel?.classList.remove('mobile-visible');
+      statsPanel?.classList.toggle('mobile-visible');
+    });
+
+    document.getElementById('btn-mobile-controls')?.addEventListener('click', () => {
+      this.audioEngine.playClick();
+      statsPanel?.classList.remove('mobile-visible');
+      controlPanel?.classList.toggle('mobile-visible');
+    });
+
+    document.getElementById('btn-mobile-team')?.addEventListener('click', () => {
+      closeMobilePanels();
+      openTeamModal();
+    });
+
+    document.getElementById('stats-panel-close')?.addEventListener('click', () => {
+      this.audioEngine.playClick();
+      statsPanel?.classList.remove('mobile-visible');
+    });
+
+    document.getElementById('control-panel-close')?.addEventListener('click', () => {
+      this.audioEngine.playClick();
+      controlPanel?.classList.remove('mobile-visible');
+    });
+
     window.addEventListener('resize', () => this.onWindowResize());
   }
 
